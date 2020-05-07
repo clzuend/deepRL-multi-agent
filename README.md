@@ -4,9 +4,7 @@
 
 In this project, we use deep reinforcement learning in a multi agent setting to train agents to play tennis in a Unity environment.
 
-<!--
 <img src="tennis.gif" width="60%" align="top-left" alt="" title="Trained Agent" />
--->
 
 ### Setup
 

@@ -45,4 +45,12 @@ agent2 = Agent(state_size=state_size, action_size=action_size, random_seed=1)
 train(agent1, agent2)
 ```
 
+If ``competitive = True``, the agents are not explicitly rewarded for hitting the ball over the net, but only for winning the game.
+
+```python
+agent1 = Agent(state_size=state_size, action_size=action_size, random_seed=0)
+agent2 = Agent(state_size=state_size, action_size=action_size, random_seed=1)
+train(agent1, agent2, competitive = True)
+```
+
 Additional information can be found in the project report: `Report.pdf`

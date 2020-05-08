@@ -25,7 +25,7 @@ device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 class Agent():
     """Interacts with and learns from the environment."""
     
-    def __init__(self, state_size, action_size, random_seed, num_agents = 1, 
+    def __init__(self, state_size, action_size, random_seed, 
                  hidden_sizes_actor = [64,64], hidden_sizes_critic = [128, 64, 32]):
         """Initialize an Agent object.
         
@@ -34,14 +34,12 @@ class Agent():
             state_size (int): dimension of each state
             action_size (int): dimension of each action
             random_seed (int): random seed
-            num_agents (int): number of agents in the environment
             hidden_sizes_actor (list): list of neurons in each layer of the actor network
             hidden_sizes_critic (list): list of neurons in each layer of the critic network
         """
         self.state_size = state_size
         self.action_size = action_size
         self.seed = random.seed(random_seed)
-        self.num_agents = num_agents
         self.hidden_sizes_actor = hidden_sizes_actor
         self.hidden_sizes_critic = hidden_sizes_critic
 
@@ -62,7 +60,6 @@ class Agent():
         self.soft_update(self.actor_local, self.actor_target, 1)   
         
         # Add Ornstein-Uhlenbeck noise
-        #self.noise = OUNoise((num_agents, action_size), random_seed)
         self.noise = OUNoise(action_size, random_seed)
 
         # Replay memory

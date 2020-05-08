@@ -30,4 +30,19 @@ pip install .
 
 Open the `Multi-Agent-Tennis.ipynb` workbook to initiate the environment and train the agents.
 
+If one agent object is passed to the training function, the network will be trained jointly for both agents:
+
+```python
+agent = Agent(state_size=state_size, action_size=action_size, random_seed=0)
+train()
+```
+
+If a second agent object is passed to ``agent2``, the agents will be trained separately:
+
+```python
+agent1 = Agent(state_size=state_size, action_size=action_size, random_seed=0)
+agent2 = Agent(state_size=state_size, action_size=action_size, random_seed=1)
+train(agent1, agent2)
+```
+
 Additional information can be found in the project report: `Report.pdf`

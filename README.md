@@ -6,6 +6,11 @@ In this project, we use deep reinforcement learning in a multi agent setting to 
 
 <img src="tennis.gif" width="60%" align="top-left" alt="" title="Trained Agent" />
 
+In this environment two agents (tennis rackets) pass a tennis ball. Every time an agent hits the ball over the net it receives a reward of +0.1. If an agent drops the ball or hits it out of the field, it receives a punishment of -0.01 and the episode ends. The goal is to achieve an average score of at least +0.5 (roughly corresponds to 10 successful passes) over 100 episodes.
+
+Each agent observes 8 variables corresponding to the position and velocity of the ball and racket. However, the Unity environment returns three observations, thus, the actual state size for each agent is 24. The action space consists of two continuous observations: jumping and moving towards or away from the net.
+
+
 ### Setup
 
 #### Download and install deepRL-multi-agent

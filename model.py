@@ -41,7 +41,7 @@ class Actor(nn.Module):
         """Build a network that maps state -> action values."""
         x = state
         for layer in self.layers:
-            x = F.relu(layer(x))
+            x = F.leaky_relu(layer(x))
         return F.tanh(self.out(x))
     
     
@@ -78,8 +78,8 @@ class Critic(nn.Module):
         
     def forward(self, state, action):
         """Build a network that maps state -> action values."""
-        x = F.relu(self.layers[0](state))                                          # first layer
+        x = F.leaky_relu(self.layers[0](state))                                          # first layer
         x = torch.cat((x,action), dim=1)                                           # concat with actions   
         for layer in self.layers[1:]:                                              # middle layers
-            x = F.relu(layer(x))
-        return F.tanh(self.out(x))                                                 # final layer
+            x = F.leaky_relu(layer(x))
+        return F.leaky_relu(self.out(x))                                                 # final layer

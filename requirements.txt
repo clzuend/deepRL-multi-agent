@@ -6,7 +6,7 @@ matplotlib==3.2.1
 numpy==1.18.3
 pandas==1.0.3
 Pillow==7.1.2
-protobuf==3.5.2
+protobuf==3.15.0
 pytest==5.4.1
 PyYAML==5.3.1
 scipy==1.4.1

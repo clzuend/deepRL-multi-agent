@@ -5,7 +5,7 @@ jupyter==1.0.0
 matplotlib==3.2.1
 numpy==1.18.3
 pandas==1.0.3
-Pillow==7.1.2
+Pillow==9.3.0
 protobuf==3.5.2
 pytest==5.4.1
 PyYAML==5.3.1
